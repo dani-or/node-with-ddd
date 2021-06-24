@@ -2,15 +2,15 @@
 
 export  class Credit {
     
-  private value: number;
+  public value: number;
 
-  private debenture : string;
+  public debenture : string;
 
-  private endDate : number;
+  public endDate : number;
 
-  private startDate : number;
+  public startDate : number;
 
-  private status : number;
+  public status : number;
 
   constructor(props) {
     Object.assign(this, props);

@@ -4,7 +4,9 @@
   "description": "Financial Services",
   "main": "server.ts",
   "scripts": {
-    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts"
+    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "test1": "cross-env TS_NODE_FILES=true mocha --exit --require ts-node/register --colors test/**/**/**/*.ts",
+    "test": "nyc npm run test1"
   },
   "author": "Daniela Osorio R <osoriordaniela@gmail.com>",
   "license": "ISC",
@@ -15,7 +17,15 @@
     "uuidv4": "^6.2.6"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.19",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.12.4",
+    "chai": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "mocha": "^9.0.1",
+    "nyc": "^15.1.0",
+    "ts-node": "^10.0.0",
     "ts-node-dev": "^1.0.0-pre.63",
-    "typescript": "^4.0.3"
+    "typescript": "^4.3.4"
   }
 }

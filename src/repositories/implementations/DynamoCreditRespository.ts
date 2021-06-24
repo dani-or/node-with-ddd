@@ -2,7 +2,7 @@ import { ICreditRepository } from "../ICreditRepository";
 import { Credit } from "../../entities/Credit";
 import { DynamoDB } from 'aws-sdk';
 
-//export 
+//export NEQUI_CREDITS_TABLE_NAME=credit-customer-product-qa
 export class DynamoCreditRespository implements ICreditRepository {
 
 private client = new DynamoDB({ region: "us-east-1" });
