@@ -4,7 +4,8 @@
   "description": "Financial Services",
   "main": "server.ts",
   "scripts": {
-    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "build" : "tsc",
+    "start": "node src/server.js",
     "test1": "cross-env TS_NODE_FILES=true mocha --exit --require ts-node/register --colors test/**/**/**/*.ts",
     "test": "nyc npm run test1"
   },
