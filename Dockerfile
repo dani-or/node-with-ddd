@@ -12,6 +12,8 @@ RUN npm i
 COPY src ./src
 COPY tsconfig.json ./tsconfig.json
 
+ENV NEQUI_CREDITS_TABLE_NAME=credit-customer-product-qa
+
 # Expose port 8080
 EXPOSE 8080
 
