@@ -7,6 +7,7 @@ export class IATIRespository implements ITransactionSummaryRepository {
   private lastModification : number = new Date().getTime();
 
   async getTransactionsSummaries(country:string) {
+    try {
     //https://iatidatastore.iatistandard.org/api/transactions/aggregations/?aggregations=count,value,expenditure,activity_count,commitment,incoming_fund,transaction_date_year&format=json&recipient_country=SD&group_by=provider_org,transaction_date_year&convert_to=usd
     const baseUrl = 'https://iatidatastore.iatistandard.org/api/transactions/aggregations/';
     const queryString = '?aggregations=count,value,expenditure,activity_count,commitment,incoming_fund,transaction_date_year&format=json&recipient_country=' + country +'&group_by=provider_org,transaction_date_year&convert_to=usd';
@@ -29,8 +30,14 @@ export class IATIRespository implements ITransactionSummaryRepository {
         });
         this.lista.push(transactionSummary);
       });
-    }    
-    return this.lista;
+    }
+    
+    } catch (error) {
+      console.log(error);
+      this.lista = [];
+      
+    }
+    return this.lista;    
   }
 
   private diffInMinutes(date1, date2){
