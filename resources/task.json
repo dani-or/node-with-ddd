@@ -1,0 +1,46 @@
+{
+    "family": "node-with-ddd",
+    "taskRoleArn": "arn:aws:iam::177333342796:role/node-with-ddd-role",
+    "executionRoleArn": "arn:aws:iam::177333342796:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "volumes": [],
+    "containerDefinitions": [{
+        "name": "node-with-ddd",
+        "image": "177333342796.dkr.ecr.us-east-1.amazonaws.com/node-with-ddd:latest",
+        "cpu": 0,
+        "portMappings": [
+            {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp"
+            }
+        ],
+        "essential": true,
+        "environment": [],
+        "mountPoints": [],
+        "volumesFrom": [],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/task-node-with-ddd",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs"
+            }
+        }
+    }],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "2048",
+    "tags": [{
+            "key": "Ambiente",
+            "value": "Produccion"
+        },
+        {
+            "key": "Owner",
+            "value": "Plataforma"
+        }
+    ]
+}
