@@ -1,0 +1,28 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-with-ddd-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      ambiente: pruebas
+      lenguaje: node
+      project: node-with-ddd
+  template:
+    metadata:
+      labels:
+        app: backend
+        ambiente: pruebas
+        lenguaje: node
+        project: node-with-ddd
+    spec:
+      serviceAccountName: node-with-ddd-service-account-name
+      containers:
+        - name: node-with-ddd
+          image: 851560454673.dkr.ecr.us-east-1.amazonaws.com/node-with-ddd:latest
+          ports:
+            - containerPort: 8080

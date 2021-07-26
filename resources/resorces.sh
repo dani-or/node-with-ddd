@@ -16,7 +16,7 @@ aws dynamodb create-table \
     --billing-mode=PAY_PER_REQUEST
 
 
-aws s3api create-bucket --bucket nequi-s3-select-tmp --region us-east-1 
+aws s3api create-bucket --bucket nequi-s3-select-tmp-2 --region us-east-1 
 
 aws sqs create-queue --queue-name sqs-lambda-customer-service-create-ticket-comment-qa
 

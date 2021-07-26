@@ -9,8 +9,8 @@
                 "logs:PutLogEvents"
             ],
             "Resource": [
-                "arn:aws:logs:us-east-1:177333342796:log-group:/ecs/task-node-with-ddd",
-                "arn:aws:logs:us-east-1:177333342796:log-group:/ecs/task-node-with-ddd:*"
+                "arn:aws:logs:us-east-1:851560454673:log-group:/ecs/task-node-with-ddd",
+                "arn:aws:logs:us-east-1:851560454673:log-group:/ecs/task-node-with-ddd:*"
             ]
         },
         {
@@ -20,7 +20,7 @@
                 "s3:GetObject"
             ],
             "Effect": "Allow",
-            "Resource": "arn:aws:s3:::nequi-s3-select-tmp/*"
+            "Resource": "arn:aws:s3:::nequi-s3-select-tmp-2/*"
         },
         {
             "Sid": "creditstable",
@@ -28,7 +28,7 @@
                 "dynamodb:GetItem"
             ],
             "Effect": "Allow",
-            "Resource": "arn:aws:dynamodb:us-east-1:177333342796:table/credit-customer-product-qa"
+            "Resource": "arn:aws:dynamodb:us-east-1:851560454673:table/credit-customer-product-qa"
         },
         {
             "Sid": "sqsreceivemessage",
@@ -40,7 +40,7 @@
             ],
             "Effect": "Allow",
             "Resource": [
-                "arn:aws:sqs:us-east-1:177333342796:sqs-lambda-customer-service-create-ticket-comment-qa"
+                "arn:aws:sqs:us-east-1:851560454673:sqs-lambda-customer-service-create-ticket-comment-qa"
             ]
         }
     ]
