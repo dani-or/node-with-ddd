@@ -19,10 +19,10 @@ aws iam create-policy --policy-name node-with-ddd-role-pilicy --policy-document 
 
 ## Crear el role con el que se va ejecutar el pod
 eksctl create iamserviceaccount \
-  --cluster=EKS-Demo-Cluster \
-  --role-name=node-with-ddd-role \
+  --cluster=EKS-Demo-Cluster1 \
+  --role-name=node-with-ddd-role-1 \
   --namespace=default \
-  --name=node-with-ddd-service-account-name  \
+  --name=node-with-ddd-service-account-name-1  \
   --attach-policy-arn=arn:aws:iam::851560454673:policy/node-with-ddd-role-pilicy \
   --approve
 
