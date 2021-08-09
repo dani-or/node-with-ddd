@@ -20,7 +20,7 @@ spec:
         lenguaje: node
         project: node-with-ddd
     spec:
-      serviceAccountName: node-with-ddd-service-account-name
+      serviceAccountName: node-with-ddd-service-account-name-1
       containers:
         - name: node-with-ddd
           image: 851560454673.dkr.ecr.us-east-1.amazonaws.com/node-with-ddd:latest
